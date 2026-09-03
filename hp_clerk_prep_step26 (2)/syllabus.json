@@ -1,0 +1,244 @@
+{
+  "HP General Knowledge": [
+    [
+      "Himachal Pradesh history",
+      "State formation, important rulers, movements, important places and personalities.",
+      "question-bank.html"
+    ],
+    [
+      "Geography",
+      "Districts, rivers, lakes, passes, mountains, national parks and climate.",
+      "question-bank.html"
+    ],
+    [
+      "Culture & festivals",
+      "Fairs, festivals, folk dances, languages, temples, handicrafts and traditions.",
+      "question-bank.html"
+    ],
+    [
+      "Economy & administration",
+      "Agriculture, tourism, hydropower, major projects and state administration.",
+      "mock-test.html"
+    ]
+  ],
+  "Indian General Knowledge": [
+    [
+      "History",
+      "Ancient, medieval and modern India; freedom movement and important personalities.",
+      "question-bank.html"
+    ],
+    [
+      "Geography",
+      "Physical geography, rivers, climate, resources, states and capitals.",
+      "question-bank.html"
+    ],
+    [
+      "Science",
+      "Everyday science, basic physics, chemistry, biology and environment.",
+      "question-bank.html"
+    ],
+    [
+      "Economy",
+      "Basic banking, budget, inflation, taxation and national economic institutions.",
+      "mock-test.html"
+    ]
+  ],
+  "Indian Polity": [
+    [
+      "Constitution",
+      "Preamble, Fundamental Rights, DPSP, Fundamental Duties and constitutional amendments.",
+      "question-bank.html"
+    ],
+    [
+      "Parliament",
+      "Lok Sabha, Rajya Sabha, law-making, Money Bills and parliamentary procedure.",
+      "mock-test.html"
+    ],
+    [
+      "President & Governor",
+      "Constitutional roles, powers and appointment processes.",
+      "question-bank.html"
+    ],
+    [
+      "Local government",
+      "Panchayati Raj, municipalities and important constitutional provisions.",
+      "mock-test.html"
+    ]
+  ],
+  "Judiciary": [
+    [
+      "Court structure",
+      "Supreme Court, High Courts and subordinate courts.",
+      "question-bank.html"
+    ],
+    [
+      "Writs",
+      "Habeas Corpus, Mandamus, Certiorari, Prohibition and Quo Warranto.",
+      "question-bank.html"
+    ],
+    [
+      "Basic legal terms",
+      "Jurisdiction, appeal, review, revision, evidence and common court terminology.",
+      "mock-test.html"
+    ],
+    [
+      "HP judiciary awareness",
+      "High Court of Himachal Pradesh and general judicial administration.",
+      "mock-test.html"
+    ]
+  ],
+  "Computer": [
+    [
+      "Computer fundamentals",
+      "CPU, memory, input/output devices, files, operating systems and storage.",
+      "question-bank.html"
+    ],
+    [
+      "MS Office",
+      "Word processing, spreadsheets, presentations and common shortcuts.",
+      "question-bank.html"
+    ],
+    [
+      "Internet & email",
+      "Browsers, search, email, URLs, downloads, cloud basics and online safety.",
+      "question-bank.html"
+    ],
+    [
+      "Cyber awareness",
+      "Passwords, phishing, malware, privacy and safe computer use.",
+      "mock-test.html"
+    ]
+  ],
+  "Reasoning": [
+    [
+      "Number & letter series",
+      "Identify patterns and missing terms.",
+      "question-bank.html"
+    ],
+    [
+      "Analogy & classification",
+      "Find relationships, odd items and classifications.",
+      "question-bank.html"
+    ],
+    [
+      "Coding-decoding",
+      "Letter, number and symbol coding patterns.",
+      "question-bank.html"
+    ],
+    [
+      "Logical reasoning",
+      "Order, ranking, syllogism, statements and conclusions.",
+      "mock-test.html"
+    ]
+  ],
+  "Mathematics / Aptitude": [
+    [
+      "Arithmetic",
+      "Percentages, ratio, proportion, averages and basic calculations.",
+      "question-bank.html"
+    ],
+    [
+      "Profit & loss",
+      "Cost price, selling price, discount and profit/loss percentages.",
+      "question-bank.html"
+    ],
+    [
+      "Time & work",
+      "Work rates, efficiency and combined work.",
+      "mock-test.html"
+    ],
+    [
+      "Speed & distance",
+      "Speed, time, distance and basic train problems.",
+      "mock-test.html"
+    ]
+  ],
+  "English": [
+    [
+      "Grammar",
+      "Parts of speech, tenses, subject-verb agreement, articles and prepositions.",
+      "question-bank.html"
+    ],
+    [
+      "Vocabulary",
+      "Synonyms, antonyms, one-word substitutions and spelling.",
+      "question-bank.html"
+    ],
+    [
+      "Comprehension",
+      "Short passages, inference and vocabulary in context.",
+      "mock-test.html"
+    ],
+    [
+      "Sentence correction",
+      "Error spotting, sentence improvement and usage.",
+      "question-bank.html"
+    ]
+  ],
+  "Hindi": [
+    [
+      "व्याकरण",
+      "संज्ञा, सर्वनाम, विशेषण, क्रिया, काल और वचन।",
+      "question-bank.html"
+    ],
+    [
+      "शब्द ज्ञान",
+      "पर्यायवाची, विलोम, अनेकार्थी और शुद्ध-अशुद्ध शब्द।",
+      "question-bank.html"
+    ],
+    [
+      "मुहावरे और लोकोक्तियाँ",
+      "अर्थ पहचानना और वाक्य प्रयोग।",
+      "question-bank.html"
+    ],
+    [
+      "समास और संधि",
+      "मूलभूत नियम और पहचान।",
+      "mock-test.html"
+    ]
+  ],
+  "Current Affairs": [
+    [
+      "Himachal Pradesh",
+      "State government, schemes, appointments, awards, projects, sports and major events.",
+      "question-bank.html"
+    ],
+    [
+      "India",
+      "National appointments, schemes, economy, science, defence, awards and important events.",
+      "question-bank.html"
+    ],
+    [
+      "Sports",
+      "Major tournaments, winners, records and Indian achievements.",
+      "question-bank.html"
+    ],
+    [
+      "World & organizations",
+      "Major international developments and important organizations.",
+      "mock-test.html"
+    ]
+  ],
+  "Typing": [
+    [
+      "English typing",
+      "Build accuracy first, then speed; practice timed passages.",
+      "typing-test.html"
+    ],
+    [
+      "Hindi typing",
+      "Practice Devanagari passages and consistent keyboard technique.",
+      "typing-test.html"
+    ],
+    [
+      "Speed & accuracy",
+      "Track WPM, correct characters and errors.",
+      "typing-test.html"
+    ],
+    [
+      "Timed practice",
+      "Use 5-minute and 10-minute tests and review your results.",
+      "typing-test.html"
+    ]
+  ]
+}

@@ -1,0 +1,90 @@
+[
+  {
+    "q": "Which bill was passed by the Himachal Pradesh Assembly on 3 September 2026?",
+    "o": [
+      "HP State Universities (Amendment) Bill, 2026",
+      "HP Education Finance Bill, 2026",
+      "HP Panchayat Bill, 2026",
+      "HP Service Rules Bill, 2026"
+    ],
+    "a": 0,
+    "e": "The Assembly passed the Himachal Pradesh State Universities (Amendment) Bill, 2026."
+  },
+  {
+    "q": "How many CBSE-affiliated government schools were included in the announced three-time attendance system?",
+    "o": [
+      "50",
+      "100",
+      "150",
+      "200"
+    ],
+    "a": 2,
+    "e": "The announcement covered 150 CBSE-affiliated government schools."
+  },
+  {
+    "q": "What GDP growth was reported for Q1 FY 2026-27?",
+    "o": [
+      "6.7%",
+      "7.2%",
+      "7.8%",
+      "8.4%"
+    ],
+    "a": 2,
+    "e": "Current-affairs reports put Q1 FY 2026-27 real GDP growth at 7.8%."
+  },
+  {
+    "q": "What was India's gross GST collection in August 2026?",
+    "o": [
+      "₹1.59 lakh crore",
+      "₹1.79 lakh crore",
+      "₹1.99 lakh crore",
+      "₹2.19 lakh crore"
+    ],
+    "a": 2,
+    "e": "The reported gross GST collection was ₹1,99,853 crore."
+  },
+  {
+    "q": "Who assumed charge as the 47th DGAFMS on 1 September 2026?",
+    "o": [
+      "Air Marshal Sandeep Thareja",
+      "Air Marshal Shakti Sharma",
+      "Surgeon Vice Admiral Arti Sarin",
+      "Air Marshal Ashish Shelar"
+    ],
+    "a": 0,
+    "e": "Air Marshal Sandeep Thareja assumed charge as the 47th DGAFMS."
+  },
+  {
+    "q": "National Nutrition Week 2026 is observed during which dates?",
+    "o": [
+      "1–7 September",
+      "5–11 September",
+      "10–16 September",
+      "15–21 September"
+    ],
+    "a": 0,
+    "e": "National Nutrition Week is observed from 1 to 7 September."
+  },
+  {
+    "q": "Which organization is India's national meteorological agency?",
+    "o": [
+      "ISRO",
+      "IMD",
+      "DRDO",
+      "NSO"
+    ],
+    "a": 1,
+    "e": "The India Meteorological Department (IMD) is the national meteorological agency."
+  },
+  {
+    "q": "According to the September 2026 forecast, rainfall was expected to be below what share of the long-period average?",
+    "o": [
+      "71%",
+      "81%",
+      "91%",
+      "101%"
+    ],
+    "a": 2,
+    "e": "The forecast described September rainfall as less than 91% of the long-period average."
+  }
+]
