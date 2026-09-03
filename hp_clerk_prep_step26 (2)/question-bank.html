@@ -1,11 +1,129 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HP Clerk Prep — Question Bank</title>
-<style>*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#172033}header{background:#102a43;color:#fff;padding:15px 20px}.nav{max-width:1100px;margin:auto;display:flex;justify-content:space-between}.logo{font-size:22px;font-weight:800}.logo span{color:#ffd166}main{max-width:1100px;margin:28px auto;padding:0 18px}.hero,.card{background:#fff;border:1px solid #e1e7ee;border-radius:15px;padding:22px}.hero{background:linear-gradient(135deg,#176b87,#102a43);color:#fff}.hero p{color:#dce8ef}.filters{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.filters input,.filters select{padding:11px;border:1px solid #d4dee7;border-radius:9px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.tag{display:inline-block;background:#eef7fa;color:#176b87;border-radius:15px;padding:4px 8px;font-size:12px;font-weight:700;margin-right:5px}.muted{color:#64748b}.btn{display:inline-block;background:#176b87;color:#fff;padding:11px 15px;border-radius:9px;text-decoration:none;font-weight:800}@media(max-width:700px){.grid{grid-template-columns:1fr}}</style></head>
-<body><header><div class="nav"><div class="logo">HP Clerk <span>Prep 2026</span></div><div>Question Bank</div><a href="login.html">Student Login</a></div></header><main>
-<section class="hero"><h1>📚 Structured Question Bank</h1><p>Practice across the major subjects used by the HP Clerk preparation platform. The current starter bank contains 50 curated practice questions.</p><a class="btn" href="mock-test.html">START MOCK TEST →</a></section>
-<div class="filters"><input id="search" placeholder="Search questions..." oninput="render()"><select id="subject" onchange="render()"><option>All Subjects</option></select><select id="difficulty" onchange="render()"><option>All Difficulties</option><option>Easy</option><option>Moderate</option><option>Hard</option></select></div>
-<div id="stats" class="muted"></div><div id="list" class="grid" style="margin-top:14px"></div>
-</main><script>
-let bank=[];fetch("questions.json").then(r=>r.json()).then(x=>{bank=x;let s=[...new Set(bank.map(q=>q.subject))].sort();document.getElementById("subject").innerHTML='<option>All Subjects</option>'+s.map(x=>`<option>${esc(x)}</option>`).join("");render()});
-function render(){let term=(document.getElementById("search").value||"").toLowerCase(),s=document.getElementById("subject").value,d=document.getElementById("difficulty").value;let a=bank.filter(q=>(s==="All Subjects"||q.subject===s)&&(d==="All Difficulties"||q.difficulty===d)&&((q.question+" "+q.answer+" "+q.subject).toLowerCase().includes(term)));document.getElementById("stats").textContent=`Showing ${a.length} of ${bank.length} questions`;document.getElementById("list").innerHTML=a.map((q,i)=>`<div class="card"><span class="tag">${esc(q.subject)}</span><span class="tag">${esc(q.difficulty)}</span><h3>${i+1}. ${esc(q.question)}</h3><p class="muted">Answer: <b>${esc(q.answer)}</b></p><p>${esc(q.explanation||"")}</p></div>`).join("")||'<div class="card">No matching questions.</div>'}
-function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
-</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HP Clerk Prep 2026 — Question Bank</title>
+<style>
+:root{--navy:#102a43;--blue:#1769aa;--gold:#ffc857;--bg:#f4f7fb;--text:#172b4d;--muted:#66788a;--card:#fff;--border:#d9e2ec;--green:#16794a}
+*{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+header{background:var(--navy);color:#fff;padding:16px 22px;position:sticky;top:0;z-index:10;box-shadow:0 2px 8px #0002}
+.header-inner{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.logo{font-size:22px;font-weight:800}.logo span{color:var(--gold)}
+nav a{color:#fff;text-decoration:none;margin-left:16px;font-weight:700;font-size:13px}
+main{max-width:1180px;margin:28px auto;padding:0 18px}
+.hero{background:linear-gradient(135deg,#fff,#eef5ff);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:18px}
+.hero h1{margin:0 0 7px;font-size:30px}.hero p{margin:0;color:var(--muted)}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}.stat{background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px 16px}.stat b{display:block;font-size:20px}
+.controls{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px}
+input,select{width:100%;padding:12px;border:1px solid #b8c7d9;border-radius:9px;font-size:15px;background:#fff}
+.question{background:#fff;border:1px solid var(--border);border-radius:16px;padding:20px;margin:14px 0;box-shadow:0 2px 7px #102a4309}
+.qtop{display:flex;justify-content:space-between;gap:10px;align-items:center}.badge{font-size:12px;background:#e9f2fb;color:var(--blue);padding:5px 9px;border-radius:999px;font-weight:700}
+.diff{font-size:12px;padding:5px 9px;border-radius:999px;background:#f0f3f6;color:#445}
+.question h3{font-size:18px;line-height:1.45;margin:16px 0}
+.options{display:grid;gap:9px}.option{border:1px solid var(--border);border-radius:10px;padding:11px 13px;background:#fbfdff}
+.option.correct{border-color:#55ad7c;background:#eefaf3}.option.wrong{border-color:#d66;background:#fff2f2}
+.answer{display:none;margin-top:14px;padding:14px;border-left:4px solid var(--green);background:#f2fbf6;border-radius:7px}
+.answer.show{display:block}.actions{margin-top:14px;display:flex;gap:8px}
+button{border:0;border-radius:9px;padding:10px 14px;font-weight:700;cursor:pointer;background:var(--gold);color:#102a43}
+button.secondary{background:#e9eef4}
+.pagination{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin:24px 0}.pagination button.active{background:var(--navy);color:#fff}
+.empty{text-align:center;background:#fff;padding:35px;border-radius:14px;border:1px solid var(--border);color:var(--muted)}
+@media(max-width:760px){.header-inner{display:block}.header-inner nav{margin-top:10px}.grid{grid-template-columns:1fr}.hero h1{font-size:24px}}
+</style>
+</head>
+<body>
+<header><div class="header-inner">
+<div class="logo">HP Clerk <span>Prep 2026</span></div>
+<nav>
+<a href="index.html">Home</a><a href="practice.html">Practice</a><a href="daily-practice.html">Daily Practice</a><a href="mock-test.html">Mock Tests</a><a href="dashboard.html">Dashboard</a>
+</nav>
+</div></header>
+
+<main>
+<section class="hero">
+<h1>📚 Question Bank</h1>
+<p>Search, filter and practice HP Clerk 2026 questions by subject, topic and difficulty.</p>
+<div class="stats">
+<div class="stat"><b id="totalCount">0</b><small>Total Questions</small></div>
+<div class="stat"><b id="visibleCount">0</b><small>Showing</small></div>
+<div class="stat"><b id="subjectCount">0</b><small>Subjects</small></div>
+</div>
+</section>
+
+<section class="controls">
+<div class="grid">
+<input id="search" type="search" placeholder="🔎 Search question, topic or keyword...">
+<select id="subject"><option value="">All Subjects</option></select>
+<select id="difficulty"><option value="">All Difficulties</option><option>Easy</option><option>Medium</option><option>Hard</option></select>
+</div>
+</section>
+
+<div id="questionList"></div>
+<div id="pagination" class="pagination"></div>
+</main>
+
+<script>
+let questions=[], filtered=[], page=1;
+const perPage=10;
+const $=id=>document.getElementById(id);
+
+async function loadQuestions(){
+  try{
+    const res=await fetch('questions.json');
+    if(!res.ok) throw new Error('Unable to load questions.json');
+    questions=await res.json();
+    filtered=[...questions];
+    $('totalCount').textContent=questions.length;
+    const subjects=[...new Set(questions.map(q=>q.subject))].sort();
+    $('subjectCount').textContent=subjects.length;
+    subjects.forEach(s=>{const o=document.createElement('option');o.value=s;o.textContent=s;$('subject').appendChild(o)});
+    render();
+  }catch(e){
+    $('questionList').innerHTML='<div class="empty"><h3>Question bank could not be loaded.</h3><p>Make sure <b>questions.json</b> is in the same folder as <b>question-bank.html</b>.</p></div>';
+  }
+}
+function apply(){
+  const term=$('search').value.toLowerCase().trim(), sub=$('subject').value, diff=$('difficulty').value;
+  filtered=questions.filter(q=>{
+    const text=(q.question+' '+q.topic+' '+q.subject+' '+q.options.join(' ')).toLowerCase();
+    return (!term||text.includes(term))&&(!sub||q.subject===sub)&&(!diff||q.difficulty===diff);
+  });
+  page=1;render();
+}
+function render(){
+  $('visibleCount').textContent=filtered.length;
+  const start=(page-1)*perPage, items=filtered.slice(start,start+perPage);
+  if(!items.length){$('questionList').innerHTML='<div class="empty"><h3>No questions found</h3><p>Try changing the search or filters.</p></div>';$('pagination').innerHTML='';return}
+  $('questionList').innerHTML=items.map((q,i)=>`
+    <article class="question" id="q${q.id}">
+      <div class="qtop"><span class="badge">${escapeHtml(q.subject)} · ${escapeHtml(q.topic)}</span><span class="diff">${escapeHtml(q.difficulty)}</span></div>
+      <h3>Q${start+i+1}. ${escapeHtml(q.question)}</h3>
+      <div class="options">${q.options.map((o,idx)=>`<div class="option" data-index="${idx}"><b>${String.fromCharCode(65+idx)}.</b> ${escapeHtml(o)}</div>`).join('')}</div>
+      <div class="actions"><button onclick="showAnswer(${q.id},this)">Show Answer</button></div>
+      <div class="answer" id="a${q.id}"><b>Correct Answer:</b> ${String.fromCharCode(65+q.answer)}. ${escapeHtml(q.options[q.answer])}<br><br><b>Explanation:</b> ${escapeHtml(q.explanation)}</div>
+    </article>`).join('');
+  renderPagination();
+}
+function showAnswer(id,btn){
+  const q=questions.find(x=>x.id===id), box=$('a'+id);
+  box.classList.toggle('show');btn.textContent=box.classList.contains('show')?'Hide Answer':'Show Answer';
+  if(box.classList.contains('show')){
+    const article=$('q'+id);article.querySelectorAll('.option').forEach((el,idx)=>{if(idx===q.answer)el.classList.add('correct')});
+  }
+}
+function renderPagination(){
+  const pages=Math.ceil(filtered.length/perPage);
+  if(pages<=1){$('pagination').innerHTML='';return}
+  let out='';
+  for(let p=1;p<=pages;p++) out+=`<button class="${p===page?'active':''}" onclick="go(${p})">${p}</button>`;
+  $('pagination').innerHTML=out;
+}
+function go(p){page=p;render();window.scrollTo({top:0,behavior:'smooth'})}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+$('search').addEventListener('input',apply);$('subject').addEventListener('change',apply);$('difficulty').addEventListener('change',apply);
+loadQuestions();
+</script>
+</body>
+</html>
