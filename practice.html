@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HP Clerk Prep 2026 — Practice Hub</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#172033}
+header{background:#102a43;color:#fff;padding:15px 20px}.nav{max-width:1120px;margin:auto;display:flex;justify-content:space-between;align-items:center}.logo{font-size:22px;font-weight:800}.logo span{color:#ffd166}
+main{max-width:1120px;margin:28px auto;padding:0 18px}.hero{background:linear-gradient(135deg,#176b87,#102a43);color:white;border-radius:18px;padding:30px}.hero p{color:#dce8ef;max-width:760px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{display:inline-block;padding:12px 17px;border:0;border-radius:9px;font-weight:700;text-decoration:none;cursor:pointer}.primary{background:#ffd166;color:#172033}.secondary{background:#e8edf3;color:#172033}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:20px}.card{background:white;border:1px solid #e2e8ef;border-radius:14px;padding:20px;box-shadow:0 5px 20px #1720330b}.subject{min-height:150px}.subject h3{margin:8px 0}.muted{color:#64748b}.count{font-size:13px;color:#176b87;font-weight:700}
+.tools{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap}.search{flex:1;min-width:240px;padding:13px;border:1px solid #d6e0e8;border-radius:9px}.filter{padding:13px;border:1px solid #d6e0e8;border-radius:9px;background:#fff}
+.question{margin-top:12px;border-top:1px solid #e5eaf0;padding:16px 0}.tag{display:inline-block;background:#eef7fa;color:#176b87;padding:4px 8px;border-radius:15px;font-size:12px;font-weight:700;margin-right:5px}
+@media(max-width:800px){.grid{grid-template-columns:1fr 1fr}}@media(max-width:520px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="nav"><div class="logo">HP Clerk <span>Prep</span></div><div>Practice Hub 2026</div><a href="login.html">Student Login</a></div></header>
+<main>
+<section class="hero">
+<h1>📚 HP Clerk 2026 Practice Hub</h1>
+<p>Study by subject, search practice questions, review difficulty levels and jump directly into a mock test or typing practice.</p>
+<div class="actions">
+<a class="btn primary" href="mock-test.html">📝 TAKE MOCK TEST</a>
+<a class="btn secondary" href="typing-test.html">⌨️ TYPING TEST</a>
+<a class="btn secondary" href="dashboard.html">📊 DASHBOARD</a>
+<a class="btn secondary" href="previous-papers.html">📄 PREVIOUS PAPERS</a>
+</div>
+</section>
+<section class="grid" id="subjects"></section>
+<section class="card" style="margin-top:22px">
+<h2>🔎 Question Practice</h2>
+<div class="tools">
+<input id="search" class="search" placeholder="Search questions, topics or answers...">
+<select id="difficulty" class="filter"><option>All Difficulties</option><option>Easy</option><option>Moderate</option><option>Hard</option></select>
+<select id="subject" class="filter"><option>All Subjects</option></select>
+</div>
+<div id="results"></div>
+</section>
+</main>
+<script>
+let bank=[];
+fetch("questions.json").then(r=>r.json()).then(x=>{bank=x;buildSubjects();fillSubjects();render()});
+const icons={"Himachal Pradesh GK":"🏔️","Indian GK":"🇮🇳","Indian Polity":"⚖️","Computer":"💻","Reasoning":"🧠","Maths / Aptitude":"➗","English":"📖","Hindi":"हिं","Judiciary / Legal GK":"⚖️","Current Affairs":"📰"};
+function buildSubjects(){let counts={};bank.forEach(x=>counts[x.subject]=(counts[x.subject]||0)+1);document.getElementById("subjects").innerHTML=Object.entries(counts).sort().map(([s,n])=>`<div class="card subject"><div style="font-size:28px">${icons[s]||"📚"}</div><h3>${s}</h3><div class="count">${n} practice questions</div><p class="muted">Focus on this subject from the question bank.</p><button class="btn secondary" onclick="setSubject('${s.replaceAll("'","\\'")}')">PRACTICE →</button></div>`).join("")}
+function fillSubjects(){let s=document.getElementById("subject");[...new Set(bank.map(x=>x.subject))].sort().forEach(x=>s.innerHTML+=`<option>${x}</option>`);["search","difficulty","subject"].forEach(id=>document.getElementById(id).addEventListener("input",render))}
+function setSubject(s){document.getElementById("subject").value=s;render();window.scrollTo({top:document.body.scrollHeight,behavior:"smooth"})}
+function render(){let q=document.getElementById("search").value.toLowerCase(),d=document.getElementById("difficulty").value,s=document.getElementById("subject").value;let a=bank.filter(x=>(!q||[x.question,x.topic,x.answer,x.subject].join(" ").toLowerCase().includes(q))&&(d==="All Difficulties"||x.difficulty===d)&&(s==="All Subjects"||x.subject===s)).slice(0,40);document.getElementById("results").innerHTML=a.length?a.map((x,i)=>`<div class="question"><span class="tag">${x.subject}</span><span class="tag">${x.difficulty}</span><span class="tag">${x.topic}</span><h3>${i+1}. ${x.question}</h3><details><summary>Show answer & explanation</summary><p><b>Answer:</b> ${x.answer}</p><p class="muted">${x.explanation||""}</p></details></div>`).join(""):"<p class='muted'>No matching questions found.</p>"}
+</script>
+</body></html>

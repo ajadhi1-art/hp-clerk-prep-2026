@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HP Clerk Prep 2026 — Mock Test</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#172033}
+header{background:#102a43;color:#fff;padding:15px 20px}.nav{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center}.logo{font-size:22px;font-weight:800}.logo span{color:#ffd166}.nav a{color:#fff;text-decoration:none;font-weight:700;margin-left:15px}
+main{max-width:1050px;margin:28px auto;padding:0 18px}.panel,.q{background:#fff;border:1px solid #e1e7ee;border-radius:14px;padding:24px;box-shadow:0 5px 20px #1720330b}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:#f7f9fb;padding:17px;border-radius:11px}.card strong{display:block;font-size:27px;color:#176b87}.btn{padding:12px 16px;border:0;border-radius:9px;background:#176b87;color:#fff;font-weight:800;cursor:pointer}.secondary{background:#e8edf3;color:#172033}.controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.hidden{display:none}.muted{color:#64748b}.q{margin-top:15px}.opt{display:block;padding:12px;margin:9px 0;background:#f7f9fb;border:1px solid #dce4eb;border-radius:9px;cursor:pointer}.opt:hover{background:#eef7fa}.correct{border-color:#16834b;background:#eaf8f0}.wrong{border-color:#bd3030;background:#fff0f0}.review{border-top:1px solid #e2e8ef;padding:14px 0}.tag{display:inline-block;background:#eef7fa;color:#176b87;border-radius:15px;padding:4px 8px;font-size:12px;font-weight:700;margin-right:5px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.nav a{display:none}}
+</style></head>
+<body>
+<header><div class="nav"><div class="logo">HP Clerk <span>Prep 2026</span></div><div><a href="index.html">Home</a><a href="launch.html">Launch</a><a href="practice.html">Practice</a><a href="previous-papers.html">Previous Papers</a><a href="current-affairs.html">Current Affairs</a><a href="dashboard.html">Dashboard</a><a href="admin.html">Admin</a><a href="leaderboard.html">Leaderboard</a><a href="exam-simulator.html">100Q Exam</a><a href="previous-papers.html">Previous Papers</a><a href="current-affairs.html">Current Affairs</a></div><a href="login.html">Student Login</a></div></header>
+<main>
+<section id="setup" class="panel">
+<h1>📝 HP Clerk 2026 Mock Test</h1><p class="muted">Choose a test size and difficulty. Questions are randomized from the site's practice bank.</p>
+<div class="grid">
+<div class="card"><strong>20</strong>Quick Test</div><div class="card"><strong>50</strong>Standard Test</div><div class="card"><strong>100</strong>Full Practice</div>
+</div>
+<div class="controls"><select id="size" class="btn secondary"><option value="20">20 Questions</option><option value="50">50 Questions</option><option value="100">100 Questions</option></select>
+<select id="difficulty" class="btn secondary"><option value="All">All Difficulties</option><option>Easy</option><option>Moderate</option><option>Hard</option></select>
+<button class="btn" onclick="start()">START TEST</button></div>
+<p class="muted">Tip: Treat the timer seriously. Don't look up answers while taking the test.</p>
+</section>
+
+<section id="exam" class="hidden">
+<div class="grid">
+<div class="card"><strong id="timer">00:00</strong>Time Left</div>
+<div class="card"><strong id="progress">0/0</strong>Progress</div>
+<div class="card"><strong id="live">0%</strong>Answered</div>
+</div>
+<div id="questions"></div>
+<div class="controls"><button class="btn" onclick="submitTest()">SUBMIT TEST</button><button class="btn secondary" onclick="confirmExit()">EXIT</button></div>
+</section>
+
+<section id="result" class="panel hidden">
+<h1>🎉 Test Completed</h1><div class="grid">
+<div class="card"><strong id="score"></strong>Score</div><div class="card"><strong id="correct"></strong>Correct</div><div class="card"><strong id="wrong"></strong>Wrong</div>
+</div>
+<p id="resultMsg" class="muted"></p>
+<div class="controls"><button class="btn" onclick="location.reload()">NEW TEST</button><a class="btn secondary" href="dashboard.html">VIEW DASHBOARD</a><a class="btn secondary" href="practice.html">PRACTICE WEAK AREAS</a></div>
+<h2>Answer Review</h2><div id="review"></div>
+</section>
+</main>
+<script>
+let bank=[],test=[],answers=[],started=0,totalSeconds=0,timer=null,submitted=false;
+fetch("questions.json").then(r=>r.json()).then(x=>{bank=x.map(normalize).filter(x=>x.question&&x.answer)})
+.catch(()=>alert("Question bank could not be loaded."));
+function normalize(x){let opts=x.options||x.choices||x.answers||[]; if(!Array.isArray(opts))opts=[];return {question:x.question||x.q,answer:String(x.answer||x.correct||"").trim(),options:opts.map(String),explanation:x.explanation||x.explain||"",subject:x.subject||"General",difficulty:x.difficulty||"Moderate",topic:x.topic||""}}
+function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
+function start(){
+if(!bank.length){alert("Question bank is still loading. Please try again.");return}
+let size=+document.getElementById("size").value,d=document.getElementById("difficulty").value;
+let pool=d==="All"?bank:bank.filter(x=>x.difficulty.toLowerCase()===d.toLowerCase());if(pool.length<size){pool=bank}
+test=shuffle(pool).slice(0,Math.min(size,bank.length));answers=new Array(test.length).fill(null);started=Date.now();totalSeconds=test.length<=20?20*60:test.length<=50?45*60:90*60;submitted=false;
+document.getElementById("setup").classList.add("hidden");document.getElementById("exam").classList.remove("hidden");render();tick();timer=setInterval(tick,1000)
+}
+function render(){document.getElementById("questions").innerHTML=test.map((q,i)=>`<div class="q" id="q${i}"><span class="tag">${esc(q.subject)}</span><span class="tag">${esc(q.difficulty)}</span><h3>${i+1}. ${esc(q.question)}</h3>${q.options.length?q.options.map((o,j)=>`<label class="opt"><input type="radio" name="q${i}" value="${j}" onchange="pick(${i},${j})"> ${esc(o)}</label>`).join(""):`<input style="width:100%;padding:12px" placeholder="Type your answer" onchange="textPick(${i},this.value)">`}</div>`).join("");updateStats()}
+function pick(i,j){answers[i]=test[i].options[j];updateStats()}
+function textPick(i,v){answers[i]=v.trim();updateStats()}
+function updateStats(){let n=answers.filter(x=>x!==null&&x!=="").length;document.getElementById("progress").textContent=`${n}/${test.length}`;document.getElementById("live").textContent=Math.round(n/test.length*100)+"%"}
+function tick(){let left=Math.max(0,totalSeconds-Math.floor((Date.now()-started)/1000));document.getElementById("timer").textContent=fmt(left);if(left<=0)submitTest()}
+function fmt(s){return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0")}
+function submitTest(){if(submitted)return;if(!confirm("Submit this test now?"))return;submitted=true;clearInterval(timer);let c=0;test.forEach((q,i)=>{if(norm(answers[i])===norm(q.answer))c++});let w=test.length-c,score=Math.round(c/test.length*100);saveResult(score,c,w);showResult(score,c,w)}
+function norm(s){return String(s??"").trim().toLowerCase().replace(/^[a-d]\s*[\)\.\-:]\s*/,"").replace(/\s+/g," ")}
+function saveResult(score,c,w){let arr=[];try{arr=JSON.parse(localStorage.getItem("hpclerk_results_v1"))||[]}catch(e){};arr.push({date:new Date().toISOString().slice(0,10),score,total:test.length,correct:c,wrong:w,questions:test.length});localStorage.setItem("hpclerk_results_v1",JSON.stringify(arr.slice(-50)))}
+function showResult(score,c,w){document.getElementById("exam").classList.add("hidden");document.getElementById("result").classList.remove("hidden");document.getElementById("score").textContent=score+"%";document.getElementById("correct").textContent=c;document.getElementById("wrong").textContent=w;document.getElementById("resultMsg").textContent=score>=80?"Excellent performance. Keep practicing under timed conditions.":score>=60?"Good start. Review mistakes and retake a fresh test.":"Focus on weak subjects and build your accuracy before increasing speed.";document.getElementById("review").innerHTML=test.map((q,i)=>{let ok=norm(answers[i])===norm(q.answer);return `<div class="review"><b>${i+1}. ${esc(q.question)}</b><p>Your answer: <b class="${ok?'':'wrong'}">${esc(answers[i]||"Not answered")}</b></p><p>Correct answer: <b class="correct">${esc(q.answer)}</b></p>${q.explanation?`<p class="muted">${esc(q.explanation)}</p>`:""}</div>`}).join("")}
+function confirmExit(){if(confirm("Exit this test? Your current answers will be lost.")){clearInterval(timer);location.reload()}}
+function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
+</script></body></html>

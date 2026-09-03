@@ -1,0 +1,42 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HP Clerk Prep 2026 — Daily Practice</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#172033}
+header{background:#102a43;color:#fff;padding:15px 20px}.nav{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center}.logo{font-size:22px;font-weight:800}.logo span{color:#ffd166}.nav a{color:#fff;text-decoration:none;font-weight:700;margin-left:15px}
+main{max-width:1050px;margin:28px auto;padding:0 18px}.panel,.q,.card{background:#fff;border:1px solid #e1e7ee;border-radius:15px;padding:22px;box-shadow:0 5px 20px #1720330b}
+.hero{background:linear-gradient(135deg,#176b87,#102a43);color:#fff}.hero p{color:#dce8ef}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0}.metric strong{display:block;font-size:29px;color:#176b87}.controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{padding:12px 16px;border:0;border-radius:9px;background:#176b87;color:#fff;font-weight:800;cursor:pointer;text-decoration:none}.secondary{background:#e8edf3;color:#172033}.hidden{display:none}.q{margin-top:14px}.opt{display:block;padding:12px;margin:9px 0;background:#f7f9fb;border:1px solid #dce4eb;border-radius:9px;cursor:pointer}.correct{background:#eaf8f0;border-color:#16834b}.wrong{background:#fff0f0;border-color:#bd3030}.muted{color:#64748b}.streak{font-size:19px;font-weight:800}.review{border-top:1px solid #e4e9ee;padding:14px 0}
+@media(max-width:800px){.grid{grid-template-columns:1fr 1fr}}@media(max-width:500px){.grid{grid-template-columns:1fr}}
+</style></head><body>
+<header><div class="nav"><div class="logo">HP Clerk <span>Prep 2026</span></div><div><a href="index.html">Home</a><a href="launch.html">Launch</a><a href="syllabus.html">Study</a><a href="dashboard.html">Dashboard</a><a href="admin.html">Admin</a><a href="leaderboard.html">Leaderboard</a><a href="exam-simulator.html">100Q Exam</a><a href="previous-papers.html">Previous Papers</a><a href="current-affairs.html">Current Affairs</a></div><a href="login.html">Student Login</a></div></header>
+<main>
+<section id="start" class="panel hero"><h1>🔥 Daily 20 Questions</h1><p>A fresh mixed-subject practice set each day. Complete it without looking up answers, then review every mistake.</p>
+<div class="grid"><div class="card"><strong>20</strong><span class="muted">Questions</span></div><div class="card"><strong>20 min</strong><span class="muted">Suggested time</span></div><div class="card"><strong>10+</strong><span class="muted">Subjects covered</span></div><div class="card"><strong id="streakStart">0 🔥</strong><span class="muted">Current streak</span></div></div>
+<div class="controls"><button class="btn" onclick="startDaily()">START TODAY'S PRACTICE</button><a class="btn secondary" href="mock-test.html">FULL MOCK TEST</a></div></section>
+
+<section id="exam" class="hidden">
+<div class="grid"><div class="card metric"><strong id="timer">20:00</strong>Time Left</div><div class="card metric"><strong id="progress">0/20</strong>Answered</div><div class="card metric"><strong id="scoreLive">0%</strong>Current Score</div><div class="card metric"><strong id="streakLive">0 🔥</strong>Streak</div></div>
+<div id="questions"></div><div class="controls"><button class="btn" onclick="submitDaily()">SUBMIT DAILY PRACTICE</button></div>
+</section>
+
+<section id="result" class="panel hidden"><h1>🎉 Daily Practice Complete</h1><div class="grid"><div class="card metric"><strong id="score"></strong>Score</div><div class="card metric"><strong id="right"></strong>Correct</div><div class="card metric"><strong id="errors"></strong>Wrong</div><div class="card metric"><strong id="newStreak"></strong>Daily Streak</div></div><p id="message" class="muted"></p><div class="controls"><button class="btn" onclick="location.reload()">PRACTICE AGAIN</button><a class="btn secondary" href="dashboard.html">VIEW DASHBOARD</a></div><h2>Answer Review</h2><div id="review"></div></section>
+</main>
+<script>
+let bank=[],test=[],answers=[],timer=null,seconds=1200,done=false;
+fetch("questions.json").then(r=>r.json()).then(x=>{bank=x}).catch(()=>alert("Question bank could not be loaded."));
+function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
+function today(){return new Date().toISOString().slice(0,10)}
+function getStreak(){let s=JSON.parse(localStorage.getItem("hpclerk_daily_v1")||"null");return s?s.streak||0:0}
+function updateStart(){document.getElementById("streakStart").textContent=getStreak()+" 🔥"}updateStart()
+function startDaily(){if(bank.length<20){alert("Question bank is loading. Please try again.");return}
+let subjects=[...new Set(bank.map(q=>q.subject))],picked=[];subjects.forEach(s=>{let a=shuffle(bank.filter(q=>q.subject===s));if(a[0])picked.push(a[0])});test=shuffle(picked.concat(shuffle(bank))).slice(0,20);answers=new Array(test.length).fill(null);seconds=1200;done=false;document.getElementById("start").classList.add("hidden");document.getElementById("exam").classList.remove("hidden");render();timer=setInterval(tick,1000)}
+function render(){document.getElementById("questions").innerHTML=test.map((q,i)=>`<div class="q"><b>${i+1}. ${esc(q.question)}</b><p><small>${esc(q.subject)} · ${esc(q.difficulty)}</small></p>${q.options.map((o,j)=>`<label class="opt"><input type="radio" name="q${i}" value="${j}" onchange="pick(${i},${j})"> ${esc(o)}</label>`).join("")}</div>`).join("")}
+function pick(i,j){answers[i]=test[i].options[j];update()}
+function update(){let n=answers.filter(Boolean).length,c=answers.reduce((a,v,i)=>a+(v&&norm(v)===norm(test[i].answer)?1:0),0);document.getElementById("progress").textContent=n+"/"+test.length;document.getElementById("scoreLive").textContent=Math.round(c/test.length*100)+"%"}
+function tick(){seconds--;document.getElementById("timer").textContent=fmt(Math.max(0,seconds));if(seconds<=0)submitDaily(true)}
+function fmt(s){return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0")}
+function submitDaily(auto=false){if(done)return;if(!auto&&!confirm("Submit today's practice?"))return;done=true;clearInterval(timer);let c=0;test.forEach((q,i)=>{if(norm(answers[i])===norm(q.answer))c++});let w=test.length-c,score=Math.round(c/test.length*100),streak=saveDaily();saveResult(score,c,w);document.getElementById("exam").classList.add("hidden");document.getElementById("result").classList.remove("hidden");document.getElementById("score").textContent=score+"%";document.getElementById("right").textContent=c;document.getElementById("errors").textContent=w;document.getElementById("newStreak").textContent=streak+" 🔥";document.getElementById("message").textContent=score>=80?"Excellent! Keep the streak going.":score>=60?"Good work. Review today's mistakes before tomorrow's set.":"Don't worry—use the review below, then practice the weakest topics.";document.getElementById("review").innerHTML=test.map((q,i)=>{let ok=norm(answers[i])===norm(q.answer);return `<div class="review"><b>${i+1}. ${esc(q.question)}</b><p>Your answer: <span class="${ok?'correct':'wrong'}">${esc(answers[i]||"Not answered")}</span></p><p>Correct answer: <b>${esc(q.answer)}</b></p><p class="muted">${esc(q.explanation||"")}</p></div>`}).join("")}
+function saveDaily(){let key="hpclerk_daily_v1",s=JSON.parse(localStorage.getItem(key)||"null"),d=today();if(!s){s={last:null,streak:0,completed:[]}}if(s.last===d)return s.streak;if(s.last){let diff=(new Date(d)-new Date(s.last))/86400000;s.streak=diff===1?s.streak+1:1}else s.streak=1;s.last=d;s.completed=(s.completed||[]).concat(d).slice(-365);localStorage.setItem(key,JSON.stringify(s));return s.streak}
+function saveResult(score,c,w){let a=JSON.parse(localStorage.getItem("hpclerk_results_v1")||"[]"),sr={};test.forEach((q,i)=>{if(!sr[q.subject])sr[q.subject]={correct:0,total:0};sr[q.subject].total++;if(norm(answers[i])===norm(q.answer))sr[q.subject].correct++});a.push({date:today(),score,total:test.length,correct:c,wrong:w,questions:test.length,type:"Daily Practice",subjectResults:sr});localStorage.setItem("hpclerk_results_v1",JSON.stringify(a.slice(-100)))}
+function norm(s){return String(s??"").trim().toLowerCase().replace(/\s+/g," ")}
+function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
+</script></body></html>

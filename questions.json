@@ -1,0 +1,698 @@
+[
+  {
+    "id": 1,
+    "subject": "Himachal Pradesh GK",
+    "difficulty": "Easy",
+    "question": "What is the capital of Himachal Pradesh?",
+    "options": [
+      "Shimla",
+      "Mandi",
+      "Dharamshala",
+      "Solan"
+    ],
+    "answer": "Shimla",
+    "explanation": "Shimla is the state capital."
+  },
+  {
+    "id": 2,
+    "subject": "Himachal Pradesh GK",
+    "difficulty": "Easy",
+    "question": "Which is the largest district of Himachal Pradesh by area?",
+    "options": [
+      "Kangra",
+      "Lahaul and Spiti",
+      "Chamba",
+      "Kinnaur"
+    ],
+    "answer": "Lahaul and Spiti",
+    "explanation": "Lahaul and Spiti is the largest district by geographical area."
+  },
+  {
+    "id": 3,
+    "subject": "Himachal Pradesh GK",
+    "difficulty": "Moderate",
+    "question": "The Great Himalayan National Park is located in which district?",
+    "options": [
+      "Kullu",
+      "Kangra",
+      "Chamba",
+      "Shimla"
+    ],
+    "answer": "Kullu",
+    "explanation": "The Great Himalayan National Park is in Kullu district."
+  },
+  {
+    "id": 4,
+    "subject": "Himachal Pradesh GK",
+    "difficulty": "Moderate",
+    "question": "Which river is associated with the Kinnaur district?",
+    "options": [
+      "Sutlej",
+      "Yamuna",
+      "Ravi",
+      "Beas"
+    ],
+    "answer": "Sutlej",
+    "explanation": "The Sutlej flows through Kinnaur."
+  },
+  {
+    "id": 5,
+    "subject": "Himachal Pradesh GK",
+    "difficulty": "Easy",
+    "question": "Himachal Pradesh became a full-fledged state in which year?",
+    "options": [
+      "1966",
+      "1971",
+      "1975",
+      "1980"
+    ],
+    "answer": "1971",
+    "explanation": "Himachal Pradesh attained statehood on 25 January 1971."
+  },
+  {
+    "id": 6,
+    "subject": "Himachal Pradesh GK",
+    "difficulty": "Easy",
+    "question": "Which city is known as the 'Queen of Hills' in Himachal Pradesh?",
+    "options": [
+      "Shimla",
+      "Mandi",
+      "Bilaspur",
+      "Una"
+    ],
+    "answer": "Shimla",
+    "explanation": "Shimla is widely known as the Queen of Hills."
+  },
+  {
+    "id": 7,
+    "subject": "Himachal Pradesh GK",
+    "difficulty": "Moderate",
+    "question": "Which district is famous for the Minjar Fair?",
+    "options": [
+      "Chamba",
+      "Kullu",
+      "Sirmaur",
+      "Solan"
+    ],
+    "answer": "Chamba",
+    "explanation": "The Minjar Fair is a major festival of Chamba."
+  },
+  {
+    "id": 8,
+    "subject": "Himachal Pradesh GK",
+    "difficulty": "Hard",
+    "question": "Which pass connects Kullu with Lahaul?",
+    "options": [
+      "Rohtang Pass",
+      "Shipki La",
+      "Kunzum Pass",
+      "Bara-Lacha La"
+    ],
+    "answer": "Rohtang Pass",
+    "explanation": "Rohtang Pass historically connects the Kullu valley with Lahaul."
+  },
+  {
+    "id": 9,
+    "subject": "Indian GK",
+    "difficulty": "Easy",
+    "question": "What is the national animal of India?",
+    "options": [
+      "Lion",
+      "Tiger",
+      "Elephant",
+      "Leopard"
+    ],
+    "answer": "Tiger",
+    "explanation": "The Bengal tiger is India's national animal."
+  },
+  {
+    "id": 10,
+    "subject": "Indian GK",
+    "difficulty": "Easy",
+    "question": "Which is the longest river in India?",
+    "options": [
+      "Ganga",
+      "Yamuna",
+      "Godavari",
+      "Narmada"
+    ],
+    "answer": "Ganga",
+    "explanation": "The Ganga is the longest river system associated with India."
+  },
+  {
+    "id": 11,
+    "subject": "Indian GK",
+    "difficulty": "Moderate",
+    "question": "Which Indian state has the longest coastline?",
+    "options": [
+      "Gujarat",
+      "Tamil Nadu",
+      "Andhra Pradesh",
+      "Maharashtra"
+    ],
+    "answer": "Gujarat",
+    "explanation": "Gujarat has India's longest state coastline."
+  },
+  {
+    "id": 12,
+    "subject": "Indian GK",
+    "difficulty": "Moderate",
+    "question": "Who was the first Indian Governor-General of independent India?",
+    "options": [
+      "Rajendra Prasad",
+      "C. Rajagopalachari",
+      "Sardar Patel",
+      "Jawaharlal Nehru"
+    ],
+    "answer": "C. Rajagopalachari",
+    "explanation": "C. Rajagopalachari was the first Indian Governor-General."
+  },
+  {
+    "id": 13,
+    "subject": "Indian Polity",
+    "difficulty": "Easy",
+    "question": "How many Fundamental Rights are currently guaranteed by the Constitution of India?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "answer": "6",
+    "explanation": "There are six broad categories of Fundamental Rights after the Right to Property ceased to be a Fundamental Right."
+  },
+  {
+    "id": 14,
+    "subject": "Indian Polity",
+    "difficulty": "Moderate",
+    "question": "Which Article deals with equality before law?",
+    "options": [
+      "Article 14",
+      "Article 19",
+      "Article 21",
+      "Article 32"
+    ],
+    "answer": "Article 14",
+    "explanation": "Article 14 guarantees equality before law and equal protection of laws."
+  },
+  {
+    "id": 15,
+    "subject": "Indian Polity",
+    "difficulty": "Moderate",
+    "question": "Who appoints the Governor of a state?",
+    "options": [
+      "Prime Minister",
+      "President",
+      "Chief Minister",
+      "Chief Justice of India"
+    ],
+    "answer": "President",
+    "explanation": "The Governor is appointed by the President of India."
+  },
+  {
+    "id": 16,
+    "subject": "Indian Polity",
+    "difficulty": "Hard",
+    "question": "A Money Bill can be introduced in the Lok Sabha only on the recommendation of whom?",
+    "options": [
+      "President",
+      "Prime Minister",
+      "Speaker",
+      "Finance Minister"
+    ],
+    "answer": "President",
+    "explanation": "Article 117 requires the President's recommendation for introduction of a Money Bill."
+  },
+  {
+    "id": 17,
+    "subject": "Judiciary",
+    "difficulty": "Easy",
+    "question": "What is the highest court of India?",
+    "options": [
+      "High Court",
+      "Supreme Court",
+      "District Court",
+      "Constitutional Court"
+    ],
+    "answer": "Supreme Court",
+    "explanation": "The Supreme Court is India's apex judicial institution."
+  },
+  {
+    "id": 18,
+    "subject": "Judiciary",
+    "difficulty": "Moderate",
+    "question": "Which writ is used to produce a person allegedly detained unlawfully before the court?",
+    "options": [
+      "Mandamus",
+      "Habeas Corpus",
+      "Certiorari",
+      "Quo Warranto"
+    ],
+    "answer": "Habeas Corpus",
+    "explanation": "Habeas Corpus protects personal liberty against unlawful detention."
+  },
+  {
+    "id": 19,
+    "subject": "Judiciary",
+    "difficulty": "Moderate",
+    "question": "Judicial review primarily allows courts to examine whether laws conform to the Constitution.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "explanation": "Judicial review enables constitutional scrutiny of laws and executive action."
+  },
+  {
+    "id": 20,
+    "subject": "Judiciary",
+    "difficulty": "Hard",
+    "question": "Which Article empowers the Supreme Court to issue writs for enforcement of Fundamental Rights?",
+    "options": [
+      "Article 32",
+      "Article 226",
+      "Article 136",
+      "Article 143"
+    ],
+    "answer": "Article 32",
+    "explanation": "Article 32 gives the Supreme Court writ jurisdiction for enforcement of Fundamental Rights."
+  },
+  {
+    "id": 21,
+    "subject": "Computer",
+    "difficulty": "Easy",
+    "question": "What does CPU stand for?",
+    "options": [
+      "Central Processing Unit",
+      "Computer Processing Utility",
+      "Central Program Unit",
+      "Control Processing Unit"
+    ],
+    "answer": "Central Processing Unit",
+    "explanation": "CPU stands for Central Processing Unit."
+  },
+  {
+    "id": 22,
+    "subject": "Computer",
+    "difficulty": "Easy",
+    "question": "Which keyboard shortcut is commonly used to copy selected text in Windows?",
+    "options": [
+      "Ctrl+C",
+      "Ctrl+X",
+      "Ctrl+V",
+      "Ctrl+Z"
+    ],
+    "answer": "Ctrl+C",
+    "explanation": "Ctrl+C copies the selected content."
+  },
+  {
+    "id": 23,
+    "subject": "Computer",
+    "difficulty": "Moderate",
+    "question": "Which of the following is an operating system?",
+    "options": [
+      "Windows",
+      "Google",
+      "Chrome",
+      "Intel"
+    ],
+    "answer": "Windows",
+    "explanation": "Windows is an operating system."
+  },
+  {
+    "id": 24,
+    "subject": "Computer",
+    "difficulty": "Moderate",
+    "question": "What is the primary purpose of a web browser?",
+    "options": [
+      "Browse websites",
+      "Edit hardware",
+      "Format disks",
+      "Compile electricity"
+    ],
+    "answer": "Browse websites",
+    "explanation": "A web browser retrieves and displays web content."
+  },
+  {
+    "id": 25,
+    "subject": "Reasoning",
+    "difficulty": "Easy",
+    "question": "Find the next number: 2, 4, 8, 16, ?",
+    "options": [
+      "20",
+      "24",
+      "32",
+      "36"
+    ],
+    "answer": "32",
+    "explanation": "Each number is multiplied by 2."
+  },
+  {
+    "id": 26,
+    "subject": "Reasoning",
+    "difficulty": "Moderate",
+    "question": "If CAT is coded as DBU, how is DOG coded using the same pattern?",
+    "options": [
+      "EPH",
+      "EOG",
+      "FPH",
+      "DPG"
+    ],
+    "answer": "EPH",
+    "explanation": "Each letter is shifted forward by one."
+  },
+  {
+    "id": 27,
+    "subject": "Reasoning",
+    "difficulty": "Moderate",
+    "question": "Book is to Reading as Fork is to:",
+    "options": [
+      "Writing",
+      "Eating",
+      "Cooking",
+      "Drawing"
+    ],
+    "answer": "Eating",
+    "explanation": "A book is used for reading; a fork is used for eating."
+  },
+  {
+    "id": 28,
+    "subject": "Reasoning",
+    "difficulty": "Hard",
+    "question": "A is taller than B, B is taller than C, and C is taller than D. Who is shortest?",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer": "D",
+    "explanation": "The order from tallest to shortest is A, B, C, D."
+  },
+  {
+    "id": 29,
+    "subject": "Maths",
+    "difficulty": "Easy",
+    "question": "What is 15% of 200?",
+    "options": [
+      "20",
+      "25",
+      "30",
+      "35"
+    ],
+    "answer": "30",
+    "explanation": "200 × 15/100 = 30."
+  },
+  {
+    "id": 30,
+    "subject": "Maths",
+    "difficulty": "Easy",
+    "question": "If 12 pens cost ₹240, what is the cost of one pen?",
+    "options": [
+      "₹15",
+      "₹20",
+      "₹25",
+      "₹30"
+    ],
+    "answer": "₹20",
+    "explanation": "₹240 ÷ 12 = ₹20."
+  },
+  {
+    "id": 31,
+    "subject": "Maths",
+    "difficulty": "Moderate",
+    "question": "A train travels 120 km in 2 hours. What is its average speed?",
+    "options": [
+      "40 km/h",
+      "50 km/h",
+      "60 km/h",
+      "80 km/h"
+    ],
+    "answer": "60 km/h",
+    "explanation": "Speed = distance/time = 120/2 = 60 km/h."
+  },
+  {
+    "id": 32,
+    "subject": "Maths",
+    "difficulty": "Hard",
+    "question": "The ratio of boys to girls is 3:2. If there are 25 students, how many are boys?",
+    "options": [
+      "10",
+      "12",
+      "15",
+      "18"
+    ],
+    "answer": "15",
+    "explanation": "Total parts = 5; boys = 3/5 × 25 = 15."
+  },
+  {
+    "id": 33,
+    "subject": "English",
+    "difficulty": "Easy",
+    "question": "Choose the synonym of 'Rapid'.",
+    "options": [
+      "Slow",
+      "Fast",
+      "Weak",
+      "Late"
+    ],
+    "answer": "Fast",
+    "explanation": "Rapid means fast or quick."
+  },
+  {
+    "id": 34,
+    "subject": "English",
+    "difficulty": "Moderate",
+    "question": "Choose the correctly spelled word.",
+    "options": [
+      "Accomodation",
+      "Accommodation",
+      "Acommodation",
+      "Accommadation"
+    ],
+    "answer": "Accommodation",
+    "explanation": "Accommodation is the correct spelling."
+  },
+  {
+    "id": 35,
+    "subject": "English",
+    "difficulty": "Moderate",
+    "question": "Identify the noun: 'The clerk prepared the report.'",
+    "options": [
+      "The",
+      "Clerk",
+      "Prepared",
+      "The"
+    ],
+    "answer": "Clerk",
+    "explanation": "Clerk is the noun naming a person."
+  },
+  {
+    "id": 36,
+    "subject": "English",
+    "difficulty": "Hard",
+    "question": "Choose the correct sentence.",
+    "options": [
+      "He have completed the work.",
+      "He has completed the work.",
+      "He having completed the work.",
+      "He complete the work."
+    ],
+    "answer": "He has completed the work.",
+    "explanation": "The singular subject 'He' takes 'has' in the present perfect."
+  },
+  {
+    "id": 37,
+    "subject": "Hindi",
+    "difficulty": "Easy",
+    "question": "'जल' का पर्यायवाची शब्द कौन-सा है?",
+    "options": [
+      "अग्नि",
+      "नीर",
+      "वायु",
+      "धरा"
+    ],
+    "answer": "नीर",
+    "explanation": "'नीर' जल का पर्यायवाची है।"
+  },
+  {
+    "id": 38,
+    "subject": "Hindi",
+    "difficulty": "Easy",
+    "question": "'दिन' का विलोम शब्द क्या है?",
+    "options": [
+      "सूर्य",
+      "रात",
+      "प्रकाश",
+      "सुबह"
+    ],
+    "answer": "रात",
+    "explanation": "'दिन' का विलोम 'रात' है।"
+  },
+  {
+    "id": 39,
+    "subject": "Hindi",
+    "difficulty": "Moderate",
+    "question": "'विद्यालय' शब्द में कौन-सा समास माना जाता है?",
+    "options": [
+      "द्वंद्व",
+      "तत्पुरुष",
+      "बहुव्रीहि",
+      "अव्ययीभाव"
+    ],
+    "answer": "तत्पुरुष",
+    "explanation": "विद्यालय = विद्या का आलय; इसे तत्पुरुष समास माना जाता है।"
+  },
+  {
+    "id": 40,
+    "subject": "Hindi",
+    "difficulty": "Moderate",
+    "question": "'नाक कटना' मुहावरे का अर्थ क्या है?",
+    "options": [
+      "सम्मान होना",
+      "अपमान होना",
+      "बीमार होना",
+      "तेज दौड़ना"
+    ],
+    "answer": "अपमान होना",
+    "explanation": "'नाक कटना' का अर्थ अपमान होना है।"
+  },
+  {
+    "id": 41,
+    "subject": "Current Affairs",
+    "difficulty": "Moderate",
+    "question": "India's GDP growth rate highlighted by the Prime Minister on 1 September 2026 was what percentage?",
+    "options": [
+      "6.8%",
+      "7.2%",
+      "7.8%",
+      "8.4%"
+    ],
+    "answer": "7.8%",
+    "explanation": "The September 1, 2026 update highlighted 7.8% GDP growth."
+  },
+  {
+    "id": 42,
+    "subject": "Current Affairs",
+    "difficulty": "Moderate",
+    "question": "The Hyundai World Archery Para Series 2026 in India is scheduled at which venue?",
+    "options": [
+      "Jawaharlal Nehru Stadium, Delhi",
+      "Sabarmati Riverfront, Ahmedabad",
+      "Eden Gardens, Kolkata",
+      "Dharamshala Stadium"
+    ],
+    "answer": "Sabarmati Riverfront, Ahmedabad",
+    "explanation": "The event is scheduled at Sabarmati Riverfront in Ahmedabad."
+  },
+  {
+    "id": 43,
+    "subject": "Current Affairs",
+    "difficulty": "Moderate",
+    "question": "Which department is India's official national meteorological agency?",
+    "options": [
+      "IMD",
+      "ISRO",
+      "DRDO",
+      "NITI Aayog"
+    ],
+    "answer": "IMD",
+    "explanation": "The India Meteorological Department (IMD) is the national meteorological service."
+  },
+  {
+    "id": 44,
+    "subject": "Current Affairs",
+    "difficulty": "Hard",
+    "question": "Which body is responsible for publishing India's official Consumer Price Index statistics?",
+    "options": [
+      "NSO",
+      "SEBI",
+      "RBI",
+      "UPSC"
+    ],
+    "answer": "NSO",
+    "explanation": "The National Statistical Office publishes key official statistics including CPI data."
+  },
+  {
+    "id": 45,
+    "subject": "Himachal Pradesh GK",
+    "difficulty": "Hard",
+    "question": "Which of these is a major hydropower project on the Sutlej in Himachal Pradesh?",
+    "options": [
+      "Bhakra",
+      "Koldam",
+      "Tehri",
+      "Sardar Sarovar"
+    ],
+    "answer": "Koldam",
+    "explanation": "Koldam Hydroelectric Project is on the Sutlej River in Himachal Pradesh."
+  },
+  {
+    "id": 46,
+    "subject": "Indian Polity",
+    "difficulty": "Easy",
+    "question": "The President of India is elected by an electoral college consisting primarily of elected members of Parliament and state legislative assemblies.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True",
+    "explanation": "The constitutional electoral college includes elected MPs and elected MLAs of states and certain union territories."
+  },
+  {
+    "id": 47,
+    "subject": "Computer",
+    "difficulty": "Hard",
+    "question": "Which type of memory is non-volatile?",
+    "options": [
+      "RAM",
+      "ROM",
+      "Cache only",
+      "Register"
+    ],
+    "answer": "ROM",
+    "explanation": "ROM retains stored information when power is removed."
+  },
+  {
+    "id": 48,
+    "subject": "Reasoning",
+    "difficulty": "Hard",
+    "question": "If all roses are flowers and some flowers fade quickly, can we conclude that some roses fade quickly?",
+    "options": [
+      "Yes, definitely",
+      "No, not necessarily",
+      "Only if roses are red",
+      "Only in summer"
+    ],
+    "answer": "No, not necessarily",
+    "explanation": "The premise does not establish that the flowers that fade quickly include roses."
+  },
+  {
+    "id": 49,
+    "subject": "Maths",
+    "difficulty": "Moderate",
+    "question": "What is the simple interest on ₹5,000 at 10% per annum for 2 years?",
+    "options": [
+      "₹500",
+      "₹750",
+      "₹1,000",
+      "₹1,500"
+    ],
+    "answer": "₹1,000",
+    "explanation": "SI = P×R×T/100 = 5000×10×2/100 = ₹1,000."
+  },
+  {
+    "id": 50,
+    "subject": "English",
+    "difficulty": "Hard",
+    "question": "Choose the antonym of 'Scarce'.",
+    "options": [
+      "Rare",
+      "Limited",
+      "Abundant",
+      "Small"
+    ],
+    "answer": "Abundant",
+    "explanation": "Scarce means insufficient or in short supply; abundant is its antonym."
+  }
+]

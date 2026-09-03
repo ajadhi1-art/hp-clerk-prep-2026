@@ -1,0 +1,68 @@
+[
+  {
+    "q": "The official HP High Court Clerk syllabus PDF states that the screening test has how many questions?",
+    "o": [
+      "80",
+      "90",
+      "100",
+      "120"
+    ],
+    "a": 2,
+    "e": "The cited official syllabus states 100 questions for 100 marks and a two-hour duration."
+  },
+  {
+    "q": "How long is the screening test according to the official syllabus?",
+    "o": [
+      "60 minutes",
+      "90 minutes",
+      "120 minutes",
+      "150 minutes"
+    ],
+    "a": 2,
+    "e": "The official syllabus specifies two hours (120 minutes)."
+  },
+  {
+    "q": "How many marks are allocated to Himachal Pradesh within General Knowledge in the cited syllabus?",
+    "o": [
+      "10",
+      "20",
+      "30",
+      "40"
+    ],
+    "a": 2,
+    "e": "The syllabus allocates 30 marks to Himachal Pradesh within General Knowledge."
+  },
+  {
+    "q": "How many marks are allocated to basic computer knowledge in the cited screening syllabus?",
+    "o": [
+      "10",
+      "15",
+      "20",
+      "25"
+    ],
+    "a": 2,
+    "e": "The cited syllabus lists 20 marks for basic knowledge of computers."
+  },
+  {
+    "q": "Which recent paper is dated 28 June 2026?",
+    "o": [
+      "Clerk/Proof Reader screening paper",
+      "Stenographer typing paper",
+      "Driver proficiency paper",
+      "Peon skill test"
+    ],
+    "a": 0,
+    "e": "The 28 June 2026 item is reported as the HP High Court Clerk/Proof Reader paper and answer key."
+  },
+  {
+    "q": "Which 2025 HP High Court Clerk paper is listed by Testbook?",
+    "o": [
+      "01 May 2025",
+      "16 May 2025",
+      "06 July 2025",
+      "31 July 2025"
+    ],
+    "a": 2,
+    "e": "Testbook lists the official paper held on 06 July 2025."
+  }
+]
