@@ -19,7 +19,7 @@
 <script>
 const QKEY="hpclerk_admin_questions_v1",AKEY="hpclerk_admin_affairs_v1";
 let editingQ=-1,editingA=-1;
-function loadFile(url,key){return fetch(url).then(r=>r.json()).then(x=>{if(!localStorage.getItem(key))localStorage.setItem(key,JSON.stringify(x));return x}).catch(()=>JSON.parse(localStorage.getItem(key)||"[]"))}
+function loadFile(url,key){return fetch(url + "?v=" + Date.now(), {cache:"no-store"}).then(r=>r.json()).then(x=>{if(!localStorage.getItem(key))localStorage.setItem(key,JSON.stringify(x));return x}).catch(()=>JSON.parse(localStorage.getItem(key)||"[]"))}
 Promise.all([loadFile("questions.json",QKEY),loadFile("current-affairs.json",AKEY)]).then(()=>renderAll());
 function getQuestions(){return JSON.parse(localStorage.getItem(QKEY)||"[]")}
 function getAffairs(){return JSON.parse(localStorage.getItem(AKEY)||"[]")}
