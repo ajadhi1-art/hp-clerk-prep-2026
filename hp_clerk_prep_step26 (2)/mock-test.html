@@ -61,7 +61,95 @@ function textPick(i,v){answers[i]=v.trim();updateStats()}
 function updateStats(){let n=answers.filter(x=>x!==null&&x!=="").length;document.getElementById("progress").textContent=`${n}/${test.length}`;document.getElementById("live").textContent=Math.round(n/test.length*100)+"%"}
 function tick(){let left=Math.max(0,totalSeconds-Math.floor((Date.now()-started)/1000));document.getElementById("timer").textContent=fmt(left);if(left<=0)submitTest()}
 function fmt(s){return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0")}
-function submitTest(){if(submitted)return;if(!confirm("Submit this test now?"))return;submitted=true;clearInterval(timer);let c=0;test.forEach((q,i)=>{if(norm(answers[i])===norm(q.answer))c++});let w=test.length-c,score=Math.round(c/test.length*100);saveResult(score,c,w);showResult(score,c,w)}
+function function submitTest(){
+  if(submitted)return;
+
+  if(!confirm("Submit this test now?"))return;
+
+  submitted=true;
+  clearInterval(timer);
+
+  let c=0;
+
+  test.forEach((q,i)=>{
+    const selected=answers[i];
+    const correct=getCorrectAnswer(q);
+
+    if(selected!==null && selected!=="" && norm(selected)===norm(correct)){
+      c++;
+    }
+  });
+
+  let w=test.length-c;
+  let score=Math.round((c/test.length)*100);
+
+  saveResult(score,c,w);
+  showResult(score,c,w);
+}
+
+
+/*
+  Converts the answer stored in questions.json
+  into the actual option text.
+
+  Supports:
+  A / B / C / D
+  1 / 2 / 3 / 4
+  option text
+  "A. option text"
+  "B) option text"
+  etc.
+*/
+function getCorrectAnswer(q){
+
+  let answer=String(q.answer ?? "").trim();
+
+  if(!answer) return "";
+
+  // If answer is A/B/C/D
+  let letterMatch=answer.match(/^([A-D])(?:\s*[\)\.\-:—])?/i);
+
+  if(letterMatch && q.options.length){
+
+    let index=letterMatch[1].toUpperCase().charCodeAt(0)-65;
+
+    if(index>=0 && index<q.options.length){
+      return q.options[index];
+    }
+  }
+
+  // If answer is 1/2/3/4
+  let numberMatch=answer.match(/^([1-4])(?:\s*[\)\.\-:—])?/);
+
+  if(numberMatch && q.options.length){
+
+    let index=parseInt(numberMatch[1])-1;
+
+    if(index>=0 && index<q.options.length){
+      return q.options[index];
+    }
+  }
+
+  // Otherwise assume answer itself is the option text
+  return answer;
+}
+
+
+/*
+  Normalizes answers before comparison.
+*/
+function norm(s){
+
+  return String(s ?? "")
+    .trim()
+    .toLowerCase()
+    .replace(/^[a-d]\s*[\)\.\-:—]\s*/i,"")
+    .replace(/^[1-4]\s*[\)\.\-:—]\s*/,"")
+    .replace(/[“”"]/g,'"')
+    .replace(/[‘’']/g,"'")
+    .replace(/\s+/g," ")
+    .trim();
+}
 function norm(s){return String(s??"").trim().toLowerCase().replace(/^[a-d]\s*[\)\.\-:]\s*/,"").replace(/\s+/g," ")}
 function saveResult(score,c,w){let arr=[];try{arr=JSON.parse(localStorage.getItem("hpclerk_results_v1"))||[]}catch(e){};arr.push({date:new Date().toISOString().slice(0,10),score,total:test.length,correct:c,wrong:w,questions:test.length});localStorage.setItem("hpclerk_results_v1",JSON.stringify(arr.slice(-50)))}
 function showResult(score,c,w){document.getElementById("exam").classList.add("hidden");document.getElementById("result").classList.remove("hidden");document.getElementById("score").textContent=score+"%";document.getElementById("correct").textContent=c;document.getElementById("wrong").textContent=w;document.getElementById("resultMsg").textContent=score>=80?"Excellent performance. Keep practicing under timed conditions.":score>=60?"Good start. Review mistakes and retake a fresh test.":"Focus on weak subjects and build your accuracy before increasing speed.";document.getElementById("review").innerHTML=test.map((q,i)=>{let ok=norm(answers[i])===norm(q.answer);return `<div class="review"><b>${i+1}. ${esc(q.question)}</b><p>Your answer: <b class="${ok?'':'wrong'}">${esc(answers[i]||"Not answered")}</b></p><p>Correct answer: <b class="correct">${esc(q.answer)}</b></p>${q.explanation?`<p class="muted">${esc(q.explanation)}</p>`:""}</div>`}).join("")}
