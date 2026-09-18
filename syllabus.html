@@ -1,11 +1,330 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>HP Clerk Prep 2026 — Study & Syllabus</title>
-<style>*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#172033}header{background:#102a43;color:#fff;padding:15px 20px}.nav{max-width:1150px;margin:auto;display:flex;justify-content:space-between;align-items:center}.logo{font-size:22px;font-weight:800}.logo span{color:#ffd166}.nav a{color:#fff;text-decoration:none;font-weight:700;margin-left:15px}main{max-width:1150px;margin:28px auto;padding:0 18px}.hero{background:linear-gradient(135deg,#176b87,#102a43);color:#fff;border-radius:18px;padding:30px}.hero p{color:#dce8ef;line-height:1.6}.filters{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.filters input,.filters select{padding:12px;border:1px solid #d3dde6;border-radius:9px;font-size:15px}.subject{background:#fff;border:1px solid #e1e7ee;border-radius:15px;margin:15px 0;overflow:hidden}.subject h2{margin:0;padding:18px 20px;background:#eef7fa;color:#176b87}.topic{padding:17px 20px;border-top:1px solid #e6ebf0;display:grid;grid-template-columns:1fr 2fr auto;gap:18px;align-items:center}.topic h3{margin:0}.muted{color:#64748b;line-height:1.5}.btn{background:#176b87;color:#fff;text-decoration:none;padding:9px 12px;border-radius:8px;font-weight:800;white-space:nowrap}@media(max-width:700px){.topic{grid-template-columns:1fr}.nav a{display:none}}
-</style></head><body><header><div class="nav"><div class="logo">HP Clerk <span>Prep 2026</span></div><div><a href="index.html">Home</a><a href="launch.html">Launch</a><a href="question-bank.html">Question Bank</a><a href="mock-test.html">Mock Tests</a><a href="dashboard.html">Dashboard</a><a href="admin.html">Admin</a><a href="leaderboard.html">Leaderboard</a><a href="exam-simulator.html">100Q Exam</a><a href="previous-papers.html">Previous Papers</a><a href="current-affairs.html">Current Affairs</a></div><a href="login.html">Student Login</a></div></header>
-<main><section class="hero"><h1>📚 HP Clerk 2026 Study Plan & Syllabus</h1><p>Follow the subjects in order, study each topic, practice questions, then test yourself under timed conditions.</p></section>
-<div class="filters"><input id="search" placeholder="Search topics..." oninput="render()"><select id="subject" onchange="render()"><option>All Subjects</option></select></div><div id="content"></div></main>
-<script>
-let data={};fetch("syllabus.json").then(r=>r.json()).then(x=>{data=x;document.getElementById("subject").innerHTML='<option>All Subjects</option>'+Object.keys(data).map(x=>`<option>${esc(x)}</option>`).join("");render()});
-function render(){let term=document.getElementById("search").value.toLowerCase(),filter=document.getElementById("subject").value;let html="";Object.entries(data).forEach(([s,topics])=>{if(filter!=="All Subjects"&&filter!==s)return;let t=topics.filter(x=>(s+" "+x[0]+" "+x[1]).toLowerCase().includes(term));if(!t.length)return;html+=`<section class="subject"><h2>${esc(s)} <small>(${t.length} topics)</small></h2>`+t.map(x=>`<div class="topic"><h3>${esc(x[0])}</h3><div class="muted">${esc(x[1])}</div><a class="btn" href="${esc(x[2])}">Practice →</a></div>`).join("")+"</section>"});document.getElementById("content").innerHTML=html||'<div class="subject"><div class="topic">No matching topics.</div></div>'}
-function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
-</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HP High Court Clerk 2026 - Rules & Syllabus</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+}
+
+header{
+    background:#163a70;
+    color:white;
+    padding:25px;
+}
+
+header h1{
+    margin:0 0 8px;
+    font-size:28px;
+}
+
+header p{
+    margin:0;
+}
+
+.container{
+    max-width:1000px;
+    margin:30px auto;
+    padding:0 20px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    padding:25px;
+    margin-bottom:20px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+h2{
+    color:#163a70;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+th,td{
+    border:1px solid #ddd;
+    padding:12px;
+    text-align:left;
+}
+
+th{
+    background:#163a70;
+    color:white;
+}
+
+.info{
+    background:#fff4df;
+    border-left:5px solid #f59e0b;
+    padding:15px;
+    margin:15px 0;
+}
+
+.button{
+    display:inline-block;
+    background:#2454d8;
+    color:white;
+    padding:12px 18px;
+    border-radius:7px;
+    text-decoration:none;
+    margin:5px 5px 5px 0;
+}
+
+.button:hover{
+    background:#163a70;
+}
+
+ul{
+    line-height:1.8;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#666;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <h1>⚖️ HP High Court Clerk / Proof Reader 2026</h1>
+        <p>Rules, Syllabus & Examination Pattern</p>
+    </div>
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>📚 Screening Test</h2>
+
+<p>
+The screening test is conducted in English and consists of
+MCQ-type questions with four choices for each question.
+</p>
+
+<table>
+<tr>
+<th>Particular</th>
+<th>Details</th>
+</tr>
+
+<tr>
+<td>Total Questions</td>
+<td><strong>100</strong></td>
+</tr>
+
+<tr>
+<td>Total Marks</td>
+<td><strong>100</strong></td>
+</tr>
+
+<tr>
+<td>Duration</td>
+<td><strong>2 Hours</strong></td>
+</tr>
+
+<tr>
+<td>Question Type</td>
+<td>Multiple Choice Questions (MCQs)</td>
+</tr>
+
+<tr>
+<td>Language</td>
+<td>English</td>
+</tr>
+</table>
+
+</div>
+
+
+<div class="card">
+
+<h2>🌎 General Knowledge — 60 Marks</h2>
+
+<table>
+
+<tr>
+<th>Area</th>
+<th>Marks</th>
+</tr>
+
+<tr>
+<td>International</td>
+<td>10</td>
+</tr>
+
+<tr>
+<td>National</td>
+<td>20</td>
+</tr>
+
+<tr>
+<td>Himachal Pradesh</td>
+<td>30</td>
+</tr>
+
+</table>
+
+<div class="info">
+
+<strong>Topics may include:</strong>
+
+<ul>
+<li>Geography</li>
+<li>Culture</li>
+<li>Sports</li>
+<li>General Science</li>
+<li>History</li>
+<li>Who is Who</li>
+<li>Tourism</li>
+<li>Current Events</li>
+<li>Computers</li>
+<li>Current Affairs</li>
+<li>Indian Judiciary</li>
+<li>Himachal Pradesh Judiciary</li>
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>💻 Basic Computer Knowledge</h2>
+
+<p>
+<strong>20 Marks</strong>
+</p>
+
+<p>
+Students should prepare basic computer concepts, hardware,
+software, operating systems, internet, networking, MS Office,
+and common computer terminology.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>⌨️ Typing Test</h2>
+
+<p>
+For the Clerk/Proof Reader written/typing test instructions
+published by the High Court:
+</p>
+
+<table>
+
+<tr>
+<th>Requirement</th>
+<th>Details</th>
+</tr>
+
+<tr>
+<td>Language</td>
+<td>English</td>
+</tr>
+
+<tr>
+<td>Typing Speed</td>
+<td><strong>30 WPM</strong></td>
+</tr>
+
+<tr>
+<td>Duration</td>
+<td><strong>10 Minutes</strong></td>
+</tr>
+
+<tr>
+<td>Permitted Mistakes</td>
+<td>Up to 10%</td>
+</tr>
+
+<tr>
+<td>Nature</td>
+<td>Qualifying</td>
+</tr>
+
+</table>
+
+<div class="info">
+Always check the latest recruitment notice and instructions
+applicable to your recruitment cycle before relying on these
+details.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>🎯 Prepare on HP Clerk Prep 2026</h2>
+
+<a class="button" href="index.html">
+🏠 Home
+</a>
+
+<a class="button" href="index.html">
+📚 Practice Questions
+</a>
+
+<a class="button" href="index.html">
+📝 Mock Test
+</a>
+
+<a class="button" href="index.html">
+⌨️ Typing Test
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h2>🏛️ Official HP High Court Website</h2>
+
+<p>
+For the latest recruitment notifications, candidate instructions,
+admit cards, results and other official information, students
+should verify information directly with the High Court of
+Himachal Pradesh.
+</p>
+
+<a class="button"
+href="https://www.hphighcourt.gov.in/"
+target="_blank"
+rel="noopener">
+Official HP High Court Website
+</a>
+
+</div>
+
+</div>
+
+<footer>
+HP Clerk Prep 2026 • Free Student Preparation Portal
+</footer>
+
+</body>
+</html>
