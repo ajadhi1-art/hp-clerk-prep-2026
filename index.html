@@ -139,12 +139,18 @@ document.getElementById("nav").innerHTML=navItems.map(([id,t])=>`<button data-id
 document.getElementById("subjectFilter").innerHTML='<option value="All">All Subjects</option>'+subjects.map(s=>`<option>${s}</option>`).join("");
 
 function show(id){
- document.querySelectorAll("section").forEach(s=>s.classList.remove("active-section"));
- document.getElementById(id).classList.add("active-section");
- document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("active",b.dataset.id===id));
- if(id==="stats") renderStats();
- if(id==="typing" && !state.typing) newTyping();
- if(id==="practice" && !state.practice) newPractice();
+  if(id==="syllabus"){
+    window.location.href="syllabus.html";
+    return;
+  }
+
+  document.querySelectorAll("section").forEach(s=>s.classList.remove("active-section"));
+  document.getElementById(id).classList.add("active-section");
+  document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("active",b.dataset.id===id));
+
+  if(id==="stats") renderStats();
+  if(id==="typing" && !state.typing) newTyping();
+  if(id==="practice" && !state.practice) newPractice();
 }
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function randomized(q){let o=shuffle(q.options.map(x=>({text:x,correct:x===q.answer})));return {...q,display:o}}
